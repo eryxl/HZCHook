@@ -2,5 +2,5 @@ name: HZCHook
 version: 0.1
 description: A webhooker skript addon
 author: Eryx
-main: studio.dreamys.exampleplugin.ExamplePlugin
+main: com.example.hzchook.Main
 api-version: 1.8.8
