@@ -1,5 +1,6 @@
 package com.example.hzchook;
-
+import java.io.IOException;
+import org.bukkit.plugin.java.JavaPlugin;
 import ch.njol.skript.SkriptPlugin;
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.lang.Expression;
