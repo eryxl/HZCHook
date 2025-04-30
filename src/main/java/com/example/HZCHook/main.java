@@ -16,9 +16,31 @@ import ch.njol.util.Kleenean;
  * - Built-in error handling and logging
  * - Compatible with Skript 2.7.3
  */
+
+ExampleMain instance;
+SkriptAddon addon;
+
 public class HZCHook extends SkriptPlugin {
     @Override
-    public void onLoad() {
+    public void onEnable() {
+        instance = this;
+       addon = Skript.registerAddon(this);
+       try {
+           //This will register all our syntax for us. Explained below
+           addon.loadClasses("me.limeglass.addon", "elements");
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       Bukkit.getLogger().info("[ExampleAddon] has been enabled!");
+   }
+ 
+   public ExampleMain getInstance() {
+       return instance;
+   }
+ 
+   public SkriptAddon getAddonInstance() {
+       return addon;
+   }
         // Register our webhook syntax
         WebhookSyntax.register(this);
     }
